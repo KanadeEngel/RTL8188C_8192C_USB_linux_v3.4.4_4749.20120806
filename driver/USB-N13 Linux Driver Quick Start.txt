@@ -1,0 +1,33 @@
+        USB-N13 Linux Driver quick start           
+        This driver only supports kernel 2.618~2.6.38, your linux is suggested to be Software Development mode that can be correctly built.        
+
+        *Before installing driver, please check installed compile, make tool and kernel source code.
+          Otherwise, you need to connect to Internet and use yum to install.
+		  if your linux isn't Software Development mode, please follow these steps.
+        
+                step1.Modify "enable=1" to "0" in /etc/yum.repos.d/fedora-updates.repo   and  /etc/yum.repos.d/fedora-updates-testing.repo
+                step2.#yum install gcc
+                step3.#yum install make
+                step4.#uname -r
+                step5.#yum install kernel-devel
+                Note: You must install the same version kernel of setp4.                
+ 
+        *Start install driver
+
+               1.tar -zxvf  rtl8188C_8192C_usb_linux_v3.4.4_4749.20120730.tar.gz
+               2.Compile driver
+               	#make
+               3.Insert the driver to kernel
+               	#make install
+               4.Reboot system
+               	#reboot
+               5.Active Interface
+               	#ifconfig wlan0 up
+               6.sitesurvey 
+               	#iwlist wlan0 scan
+
+
+        *Uninstall driver
+
+               1. #make uninstall
+               2. #reboot
